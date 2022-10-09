@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Calculator</title>
+    <style>
+        body {
+            
+            background-color: rgb(2, 109, 91);
+        }
+
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="GET" action="http://127.0.0.1:3000/" autocomplete="off">
+        <input name="num1" type="text"><br>
+        <input name="num2" type="text"><br>
+        <input name="sign" list="operators" type="text"><br>
+        <br>
+        <input type="submit" value="=">
+        <datalist id="operators">
+            <option value="+">
+            <option value="-">
+            <option value="*">
+            <option value="/">
+        </datalist>
+    </form>
+</body>
+</html>
