@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link>
+    <link rel="icon" href="./public/favicon.ico">
     <title>Calculator</title>
     <style>
         body {
@@ -20,10 +20,10 @@
            height: 2.1rem;
         }
 
-        p {
+        #res {
             
             color: white;
-            font-size: 70px;
+            font-size: 60px;
             margin: 10px;
         }
 
@@ -36,22 +36,9 @@
 </body>
    <form method="GET" action="http://127.0.0.1:3000" autocomplete="off">
         <label>Enter an expression:</label>
-        <input name="num1" type="text">
-        <!-- <label>Enter a second number:</label>
-        <input name="num2" type="text"><br>
-        <label>Choose an operand:</label>
-        <input name="sign" list="operators" type="text" size="2px"><br>
-        <label>Equal button:</label> -->
+        <input name="expression" type="text">
         <input class="btn" type="submit" value="=">
-        <!-- <label>Clear button:</label>
-        <input class="btn" type="reset" value="C">
-        <datalist id="operators">
-            <option value="+">
-            <option value="-">
-            <option value="*">
-            <option value="/">
-        </datalist>
-    </form> -->
-    <p>Result: {result}</p>
+    </form>
+    <div id="res">Result: {result}</div>
 </body>
 </html>
