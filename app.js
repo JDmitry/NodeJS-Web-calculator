@@ -11,12 +11,20 @@ http.createServer(function(request, response) {
         'Content-Type': 'text/html; charset=utf-8'
     });
     
-    const n1 = queryObj.num1;
-    const n2 = queryObj.num2;
-    const s = queryObj.sign;
+    //const n1 = queryObj.num1;
+    // const n2 = queryObj.num2;
+    // const s = queryObj.sign;
 
     try {
-        result = `${eval(n1 + s + n2)}`;
+        //result = `${eval(n1 + s + n2)}`;
+        result = eval(queryObj.num1);
+
+        fs.readFile("index.html", "utf-8", function(error, data){
+        
+            data = data.replace("{result}", result);
+            result = 0;
+            response.end(data);
+        });
     } catch (err) {
         fs.readFile("index.html", "utf-8", function(error, data){
         
@@ -25,15 +33,6 @@ http.createServer(function(request, response) {
             response.end(data);
         });
     }
-    
-
-    fs.readFile("index.html", "utf-8", function(error, data){
-        
-        data = data.replace("{result}", result);
-        result = 0;
-        response.end(data);
-    });
-            
 }).listen(port, host, function() {
     console.log(`Server is running on http://${host}:${port}`);
 });
