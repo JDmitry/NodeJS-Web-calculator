@@ -3,28 +3,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Calculator</title>
     <style>
         body {
-            
-            background-color: rgb(2, 109, 91);
+            background-color: rgb(17, 18, 26);
+        }
+
+        form {
+            color: white;
+            font-size: 30px;
         }
 
         input {
-            margin: 5px;
+           margin: 8px;
+        }
+
+        p {
+            
+            color: white;
+            font-size: 70px;
+            margin: 10px;
+        }
+
+        #btn {
+            width: 5rem;
+            height: 2.5rem;
         }
     </style>
 </head>
-<body>
-    
-    <form method="GET" action="http://127.0.0.1:3000/" autocomplete="off">
+</body>
+   <form method="GET" action="http://127.0.0.1:3000" autocomplete="off">
+        <label>Enter a first number:</label>
         <input name="num1" type="text"><br>
+        <label>Enter a second number:</label>
         <input name="num2" type="text"><br>
-        <input name="sign" list="operators" type="text"><br>
-        <br>
-        <input type="submit" value="=">
+        <label>Choose an operand:</label>
+        <input name="sign" list="operators" type="text" size="2px"><br>
+        <label>Equal button:</label>
+        <input id="btn" type="submit" value="=">
         <datalist id="operators">
             <option value="+">
             <option value="-">
@@ -32,5 +48,6 @@
             <option value="/">
         </datalist>
     </form>
+    <p>Result: {result}</p>
 </body>
 </html>
